@@ -1,0 +1,26 @@
+if (checkbox === "on") {
+    var index = newItems.indexOf(newItem);
+    let taskDone = newItems[index];
+    if (index !== -1) {
+        newItems.splice(index, 1);
+        newItems.push(newItem);
+    }
+} else {
+    newItems.push(newItem);
+}
+let index = newItems.indexOf(newItem);
+if (checkbox === "on") {
+    // If checkbox is checked, move the task to the end of the list
+    if (index !== -1) {
+        newItems.splice(index, 1);
+        newItems.push(newItem);
+    }
+} else {
+    // If checkbox is unchecked, move the task to its original position
+    if (index !== -1) {
+        newItems.splice(index, 1);
+        newItems.splice(index, 0, newItem);
+    }
+} 
+
+<!-- <% for (var i=0; i < newItems.length; i++) { %> -->
